@@ -1,27 +1,42 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
+import 'package:ecommerceaudio/product/init/product_blocs.dart';
+import 'package:ecommerceaudio/product/init/product_initialization.dart';
+import 'package:ecommerceaudio/product/init/product_localization.dart';
+import 'package:ecommerceaudio/product/navigation/app_router.dart';
 import 'package:ecommerceaudio/product/theme/light_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  await ProductInitialization.Init();
+  runApp(
+    ProductLocalization(
+      child: ProductBlocsInitialization(
+        child: const _MyApp(),
+      ),
+    ),
+  );
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+final class _MyApp extends StatelessWidget {
+  const _MyApp();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      theme: LightTheme().theme,
-      themeMode: ThemeMode.light,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Column(
-            children: [],
-          ),
+    return MaterialApp.router(
+      routerConfig: AppRouter().config(
+        reevaluateListenable: ReevaluateListenable.stream(
+          context.read<AuthManagerBloc>().stream,
         ),
       ),
+      title: 'Audio E Commerce',
+      theme: LightTheme().theme,
+      themeMode: ThemeMode.light,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }

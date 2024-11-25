@@ -13,6 +13,7 @@ final class LightTheme {
       color: Colors.white,
       elevation: 0,
     ),
+    fontFamily: FontConstants.DmSans,
     scaffoldBackgroundColor: AppColorConstants.scaffoldBackground,
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(

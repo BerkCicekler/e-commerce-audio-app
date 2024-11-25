@@ -1,0 +1,18 @@
+{
+  "auth": {
+    "topText": "It's modular and designed to last",
+    "forgotPassword": "Forgot Password",
+    "noAccount1": "Didn't have any account?",
+    "noAccount2": "Sign Up here",
+    "haveAccount1": "If you have an account?",
+    "haveAccount2": "Sign In here",
+    "signIn": "Sign in",
+    "signUp": "Sign Up",
+    "userName": "User Name"
+  },
+
+  "global": {
+    "password": "Password",
+    "email": "Email"
+  }
+}
