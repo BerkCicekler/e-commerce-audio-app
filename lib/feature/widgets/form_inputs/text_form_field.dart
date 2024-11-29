@@ -1,6 +1,5 @@
 import 'package:ecommerceaudio/product/constants/font_constants.dart';
 import 'package:ecommerceaudio/product/constants/radius_constants.dart';
-import 'package:ecommerceaudio/product/constants/svg_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

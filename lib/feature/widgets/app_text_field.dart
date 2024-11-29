@@ -1,18 +1,19 @@
 import 'package:ecommerceaudio/product/constants/font_constants.dart';
 import 'package:ecommerceaudio/product/constants/radius_constants.dart';
-import 'package:ecommerceaudio/product/constants/svg_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-final class SearchField extends StatelessWidget {
-  SearchField({
+final class AppTextField extends StatelessWidget {
+  AppTextField({
     required this.controller,
-    required this.hintText,
+    this.hintText = '',
+    this.svgIconPath,
     super.key,
   });
 
   final TextEditingController controller;
   final String hintText;
+  final String? svgIconPath;
 
   final _defaultOutlinedBorder = OutlineInputBorder(
     borderSide: const BorderSide(
@@ -37,8 +38,11 @@ final class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45,
+      height: 50,
       child: TextField(
+        cursorColor: Colors.black,
+        cursorWidth: 0.8,
+        cursorHeight: 15,
         controller: controller,
         decoration: InputDecoration(
           filled: true,
@@ -46,15 +50,19 @@ final class SearchField extends StatelessWidget {
           border: _defaultOutlinedBorder,
           enabledBorder: _defaultOutlinedBorder,
           focusedBorder: _defaultOutlinedBorder,
-          prefixIcon: SvgPicture.asset(
-            SvgConstants.search,
-            width: 30,
-            height: 15,
-            fit: BoxFit.scaleDown,
-          ),
+          prefixIcon: svgIconPath != null
+              ? SvgPicture.asset(
+                  svgIconPath!,
+                  width: 30,
+                  height: 15,
+                  fit: BoxFit.scaleDown,
+                )
+              : null,
           hintStyle: _hintStyle,
           isDense: true,
-          contentPadding: EdgeInsets.all(1),
+          contentPadding: svgIconPath == null
+              ? const EdgeInsets.all(12)
+              : const EdgeInsets.all(1),
           hintText: hintText,
         ),
         style: _textStyle,
