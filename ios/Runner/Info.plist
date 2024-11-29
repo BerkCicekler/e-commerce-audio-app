@@ -6,6 +6,19 @@
 	<array>
 		<string>en</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.644964721466-348gpnrc982nsj9c4v7t3gqf3hd5oua0</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>644964721466-348gpnrc982nsj9c4v7t3gqf3hd5oua0.apps.googleusercontent.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
