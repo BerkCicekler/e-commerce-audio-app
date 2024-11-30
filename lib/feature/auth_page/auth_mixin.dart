@@ -49,7 +49,7 @@ mixin _AuthPageMixin on State<AuthPage> {
     });
   }
 
-  void _onAuthManagerBlocChange(AuthManagerState state) {
+  Future<void> _onAuthManagerBlocChange(AuthManagerState state) async {
     switch (state.runtimeType) {
       case AuthManagerErrorState:
         ScaffoldMessenger.of(context).showSnackBar(
@@ -58,7 +58,10 @@ mixin _AuthPageMixin on State<AuthPage> {
           ),
         );
       case AuthManagerSuccessState:
-        context.router.replace(const HomeRoute());
+        // the authPage is defined keepHistory=false
+        // in AppRouter so we are just pushing out home page
+        context.router.push(const HomeRoute());
+
       default:
     }
   }

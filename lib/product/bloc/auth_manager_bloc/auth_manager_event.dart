@@ -21,3 +21,5 @@ final class AuthPageOnOAuthSignInEvent extends AuthPageEvent {
 
   final IOAuthSignInService oAuthService;
 }
+
+final class AuthSignOutEvent extends AuthPageEvent {}
