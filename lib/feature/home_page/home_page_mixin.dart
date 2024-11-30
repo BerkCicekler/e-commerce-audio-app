@@ -6,7 +6,7 @@ mixin _HomePageMixin on State<HomePage> {
     super.initState();
     _featuredProductsCubit =
         FeaturedProductsCubit(searchService: SearchService());
-    sa();
+    loadCategoriesAndFeatured();
   }
 
   @override
@@ -16,7 +16,7 @@ mixin _HomePageMixin on State<HomePage> {
 
   late final FeaturedProductsCubit _featuredProductsCubit;
 
-  Future<void> sa() async {
+  Future<void> loadCategoriesAndFeatured() async {
     await context.read<CategoriesCubit>().fetchCategories();
     _featuredProductsCubit
         .fetchFeaturedProducts(context.read<CategoriesCubit>().state[0].id);

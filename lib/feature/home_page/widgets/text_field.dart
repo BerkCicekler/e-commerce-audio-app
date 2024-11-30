@@ -9,7 +9,7 @@ final class _TextField extends StatelessWidget {
       padding: AppPaddingConstants.pageConst.copyWith(top: 0),
       child: AppTextField(
         controller: TextEditingController(),
-        hintText: 'Search headphone',
+        hintText: _HomePageLocalization.textFieldHint,
         svgIconPath: SvgConstants.search,
       ),
     );

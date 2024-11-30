@@ -13,6 +13,8 @@ enum EndPointEnums {
 
   categories('categories/'),
 
+  images('image/'),
+
   shopFeatured('shop/featured/');
 
   final String value;

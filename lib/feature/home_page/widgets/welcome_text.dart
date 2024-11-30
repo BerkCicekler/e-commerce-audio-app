@@ -5,28 +5,31 @@ final class _WelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userName =
+    final authState =
         context.read<AuthManagerBloc>().state as AuthManagerSuccessState;
-    return Padding(
-      padding: AppPaddingConstants.pageConst.copyWith(bottom: 0, top: 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Hi, ${userName.user.name}',
-            style: const TextStyle(
-              fontSize: 17,
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Padding(
+        padding: AppPaddingConstants.pageConst.copyWith(bottom: 0, top: 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              _HomePageLocalization.hi(authState.user.name),
+              style: const TextStyle(
+                fontSize: 17,
+              ),
             ),
-          ),
-          const Text(
-            'What are you looking for today?',
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.w700,
-              wordSpacing: 1,
+            Text(
+              _HomePageLocalization.lookingFor,
+              style: const TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+                wordSpacing: 1,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

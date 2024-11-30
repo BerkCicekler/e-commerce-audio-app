@@ -13,7 +13,7 @@ final class _ScrollAbleContainersState extends State<_ScrollAbleContainers>
   Widget build(BuildContext context) {
     final categories = context.watch<CategoriesCubit>().state;
     return Container(
-      height: 270,
+      height: 250,
       padding: const EdgeInsets.only(top: 30),
       child: Column(
         children: [
@@ -46,10 +46,10 @@ final class _ScrollAbleContainersState extends State<_ScrollAbleContainers>
               onPageChanged: _setCard,
               padEnds: false,
               itemBuilder: (context, index) {
-                return FractionallySizedBox(
+                return const FractionallySizedBox(
                   alignment: Alignment.centerLeft,
                   widthFactor: 1.04,
-                  child: const _SpecialContainer(),
+                  child: _SpecialContainer(),
                 );
               },
             ),
@@ -111,7 +111,7 @@ final class _SpecialContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: 170,
+            width: 140,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,20 +119,21 @@ final class _SpecialContainer extends StatelessWidget {
                 const Text(
                   'TMA-2 Modular Headphone',
                   style: TextStyle(
-                    fontSize: 27,
+                    fontSize: 23,
                     fontWeight: FontWeight.w800,
-                    letterSpacing: -0.5,
+                    letterSpacing: 0,
                     height: 1.2,
                   ),
                 ),
                 Row(
                   children: [
                     Text(
-                      'Shop now',
+                      _HomePageLocalization.shopNow,
                       style: TextStyle(
-                          fontSize: 17,
-                          color: theme.colorScheme.onPrimary,
-                          fontWeight: FontWeight.w600),
+                        fontSize: 16,
+                        color: theme.colorScheme.onPrimary,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     const SizedBox(width: 10),
                     SvgPicture.asset(

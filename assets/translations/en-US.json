@@ -11,8 +11,17 @@
     "userName": "User Name"
   },
 
+  "home": {
+    "hi": "Hi, {}",
+    "lookingFor": "What are you looking for today?",
+    "searchField": "Search headphone",
+    "shopNow": "Shop now",
+    "featuredProducts": "Featured Products"
+  },
+
   "global": {
     "password": "Password",
-    "email": "Email"
+    "email": "Email",
+    "seeAll": "See All"
   }
 }

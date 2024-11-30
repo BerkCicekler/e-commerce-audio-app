@@ -18,6 +18,7 @@ final class AuthManagerBloc extends Bloc<AuthPageEvent, AuthManagerState> {
   }) : super(AuthManagerInitialState()) {
     on<AuthPageOnButtonClickEvent>(_onAuthPageButtonClick);
     on<AuthPageOnOAuthSignInEvent>(_oAuthSignIn);
+    on<AuthSignOutEvent>(_authSignOut);
   }
 
   final AuthService authService;
@@ -91,5 +92,9 @@ final class AuthManagerBloc extends Bloc<AuthPageEvent, AuthManagerState> {
         ),
       ),
     );
+  }
+
+  void _authSignOut(AuthSignOutEvent event, Emitter<AuthManagerState> emit) {
+    emit(AuthManagerInitialState());
   }
 }

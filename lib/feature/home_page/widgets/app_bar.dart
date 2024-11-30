@@ -15,17 +15,26 @@ final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           width: 20,
           fit: BoxFit.scaleDown,
         ),
-        title: Text(
-          'Audio',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset(
+              SvgConstants.appLogo,
+              width: 25,
+            ),
+            const SizedBox(width: 5),
+            Text(
+              'Audio',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+          ],
         ),
         actions: const [
           CircleAvatar(
-            radius: 18,
-            backgroundImage: NetworkImage(
-                'https://img.freepik.com/premium-photo/graphic-designer-digital-avatar-generative-ai_934475-9292.jpg'),
+            radius: 17,
+            backgroundImage: AssetImage(AppImageConstants.profilePic),
             backgroundColor: Colors.transparent,
           ),
         ],

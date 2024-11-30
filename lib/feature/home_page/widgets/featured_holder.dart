@@ -6,7 +6,6 @@ final class _FeaturedHolder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final featured = context.watch<FeaturedProductsCubit>().state;
-    print(featured.products);
     return SizedBox(
       height: 315,
       child: Padding(
@@ -14,12 +13,12 @@ final class _FeaturedHolder extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _TopHolder(),
-            SizedBox(
+            const _TopHolder(),
+            const SizedBox(
               height: 20,
             ),
             featured.products.length == 0
-                ? SizedBox.shrink()
+                ? const SizedBox.shrink()
                 : Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -44,17 +43,17 @@ final class _TopHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Featured Products',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+          _HomePageLocalization.featuredProducts,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         ),
         Text(
-          'See All',
-          style: TextStyle(
-            fontSize: 17,
+          _HomePageLocalization.seeAll,
+          style: const TextStyle(
+            fontSize: 14,
             fontWeight: FontWeight.w500,
             color: AppColorConstants.greyDark,
           ),
@@ -75,8 +74,8 @@ final class _FeaturedItemHolder extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: width * 0.4,
-      margin: EdgeInsets.only(right: 15),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: theme.colorScheme.primary,
         borderRadius: RadiusConstants.mediumBorderRadius,
@@ -88,19 +87,19 @@ final class _FeaturedItemHolder extends StatelessWidget {
           Center(
             child: SizedBox(
               width: width * .3,
-              child: Image.network(
-                'http://10.0.2.2:8080/api/v1/image/${product.pictureName}',
+              child: AppImageWidget.network(
+                imageName: product.pictureName,
                 fit: BoxFit.contain,
               ),
             ),
           ),
           Text(
             product.name,
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
           ),
           Text(
             'USD ${product.price}',
-            style: TextStyle(fontWeight: FontWeight.w900),
+            style: const TextStyle(fontWeight: FontWeight.w900),
           ),
         ],
       ),
