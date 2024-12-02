@@ -68,40 +68,49 @@ final class _FeaturedItemHolder extends StatelessWidget {
 
   final Product product;
 
+  void _navigateToProductPage(BuildContext context) {
+    context.router.push(ProductRoute(product: product));
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final theme = Theme.of(context);
-    return Container(
-      width: width * 0.4,
-      margin: const EdgeInsets.only(right: 15),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.primary,
-        borderRadius: RadiusConstants.mediumBorderRadius,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: SizedBox(
-              width: width * .3,
-              child: AppImageWidget.network(
-                imageName: product.pictureName,
-                fit: BoxFit.contain,
+    return InkWell(
+      onTap: () {
+        _navigateToProductPage(context);
+      },
+      child: Container(
+        width: width * 0.4,
+        margin: const EdgeInsets.only(right: 15),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.primary,
+          borderRadius: RadiusConstants.mediumBorderRadius,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: SizedBox(
+                width: width * .3,
+                child: AppImageWidget.network(
+                  imageName: product.pictureName,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-          ),
-          Text(
-            product.name,
-            style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-          ),
-          Text(
-            'USD ${product.price}',
-            style: const TextStyle(fontWeight: FontWeight.w900),
-          ),
-        ],
+            Text(
+              product.name,
+              style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+            ),
+            Text(
+              'USD ${product.price}',
+              style: const TextStyle(fontWeight: FontWeight.w900),
+            ),
+          ],
+        ),
       ),
     );
   }

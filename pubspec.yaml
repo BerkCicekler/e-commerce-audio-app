@@ -12,7 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_sign_in: ^6.2.2
+  #Network
+  dio: ^5.7.0
 
   #State Management
   flutter_bloc: ^8.1.6
@@ -24,9 +25,10 @@ dependencies:
   easy_localization: ^3.0.7
   flutter_svg: ^2.0.14
   cupertino_icons: ^1.0.8
-  dio: ^5.7.0
+  flutter_rating_bar: ^4.0.1
 
   #Utils
+  google_sign_in: ^6.2.2
   equatable: ^2.0.5
   json_annotation: ^4.9.0
   logger: ^2.5.0
