@@ -7,4 +7,7 @@ final class AppImageConstants {
   static const headphone = "${_imagePath}headphone.png";
 
   static const profilePic = "${_imagePath}default-profile-pic.jpg";
+
+  static const headphoneFront = "${_imagePath}headphone-front.png";
+  static const headphoneJak = "${_imagePath}headphone-jak.png";
 }
