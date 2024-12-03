@@ -13,6 +13,8 @@ final class SvgConstants {
   static const menu = "${_basePath}menu.svg";
   static const shoppingCart = "${_basePath}shopping-cart.svg";
   static const arrowRight = "${_basePath}arrow-right.svg";
+  static const clock = "${_basePath}clock.svg";
+  static const xIcon = "${_basePath}x.svg";
 
   static const oauth_google = "${_basePath}oauth/google.svg";
   static const oauth_facebook = "${_basePath}oauth/facebook.svg";

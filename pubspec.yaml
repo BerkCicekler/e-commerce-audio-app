@@ -17,6 +17,7 @@ dependencies:
 
   #State Management
   flutter_bloc: ^8.1.6
+  provider: ^6.1.2
 
   #Navigation
   auto_route: ^9.2.2
