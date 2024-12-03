@@ -8,12 +8,24 @@ final class AppTextField extends StatelessWidget {
     required this.controller,
     this.hintText = '',
     this.svgIconPath,
+    this.onTap,
+    this.readonly = false,
+    this.keyboardType = TextInputType.text,
+    this.textInputAction = TextInputAction.none,
+    this.autoFocus = false,
+    this.onSubmitted,
     super.key,
   });
 
   final TextEditingController controller;
   final String hintText;
   final String? svgIconPath;
+  final void Function()? onTap;
+  final bool readonly;
+  final TextInputType keyboardType;
+  final TextInputAction textInputAction;
+  final bool autoFocus;
+  final void Function(String)? onSubmitted;
 
   final _defaultOutlinedBorder = OutlineInputBorder(
     borderSide: const BorderSide(
@@ -40,6 +52,12 @@ final class AppTextField extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: TextField(
+        onSubmitted: onSubmitted,
+        autofocus: autoFocus,
+        keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        readOnly: readonly,
+        onTap: onTap,
         cursorColor: Colors.black,
         cursorWidth: 0.8,
         cursorHeight: 15,

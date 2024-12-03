@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
 import 'package:ecommerceaudio/product/bloc/categories_cubit/categories_cubit.dart';
+import 'package:ecommerceaudio/product/cache/search_history_cache.dart';
 import 'package:ecommerceaudio/product/models/cache_models/search_history.dart';
 import 'package:ecommerceaudio/product/services/auth_service.dart';
 import 'package:ecommerceaudio/product/services/categories_service.dart';
@@ -25,7 +26,7 @@ final class ProductInitialization {
       [SearchHistorySchema],
       directory: dir.path,
     );
-    GetIt.I.registerSingleton(isar);
+    SearchHistoryCache.initIsar(isar);
   }
 
   static void _getItInits() {

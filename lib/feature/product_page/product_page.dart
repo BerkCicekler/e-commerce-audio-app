@@ -1,13 +1,12 @@
 import 'package:auto_route/annotations.dart';
+import 'package:ecommerceaudio/feature/widgets/basket_icon_button.dart';
 import 'package:ecommerceaudio/product/constants/app_color_constants.dart';
 import 'package:ecommerceaudio/product/constants/app_image_constants.dart';
 import 'package:ecommerceaudio/product/constants/app_padding_constants.dart';
 import 'package:ecommerceaudio/product/constants/radius_constants.dart';
-import 'package:ecommerceaudio/product/constants/svg_constants.dart';
 import 'package:ecommerceaudio/product/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 part 'widgets/app_bar.dart';
 part 'widgets/top_text.dart';
