@@ -22,15 +22,16 @@ final class NetworkService {
   Future<BaseResponse> baseRequest(
     EndPointEnums endPoint,
     ApiRequestMethodsEnum method,
-    Map<String, dynamic>? data,
-  ) async {
+    Map<String, dynamic>? data, {
+    Map<String, dynamic>? query,
+  }) async {
     final response = await _dio.request<Map<String, dynamic>>(
-      ApiConstants.url + endPoint.value,
-      data: data,
-      options: Options(
-        method: method.value,
-      ),
-    );
+        ApiConstants.url + endPoint.value,
+        data: data,
+        options: Options(
+          method: method.value,
+        ),
+        queryParameters: query);
     return BaseResponse.fromResponse(response);
   }
 

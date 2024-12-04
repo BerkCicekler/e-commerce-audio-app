@@ -15,7 +15,7 @@ enum EndPointEnums {
 
   images('image/'),
 
-  shopFeatured('shop/featured/');
+  shopFeatured('shop/featured');
 
   final String value;
 
