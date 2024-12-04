@@ -3,6 +3,7 @@ import 'package:ecommerceaudio/product/bloc/featured_products_cubit/featured_pro
 import 'package:ecommerceaudio/product/constants/enums/filter_sort_by_enums.dart';
 import 'package:ecommerceaudio/product/models/product.dart';
 import 'package:ecommerceaudio/product/models/request_models/filter_request_model.dart';
+import 'package:ecommerceaudio/product/models/request_models/search_request_query_model.dart';
 import 'package:ecommerceaudio/product/models/response_models/product_response_model.dart';
 import 'package:ecommerceaudio/product/services/search_service.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -13,7 +14,14 @@ final class MockSearchService extends Mock implements SearchService {}
 void main() {
   setUpAll(() {
     registerFallbackValue(
-        FilterRequestModel('', '', 0, FilterSortByEnums.popularity, 0, 0));
+      FilterRequestModel(
+        '',
+        FilterSortByEnums.popularity,
+        0,
+        0,
+      ),
+    );
+    registerFallbackValue(SearchRequestQueryModel('', 0));
   });
 
   group('Featured products bloc', () {
@@ -38,7 +46,7 @@ void main() {
       'on fetchFeaturedProducts successfully, status is first loading then success with data',
       build: () => FeaturedProductsCubit(searchService: mockSearchService),
       setUp: () {
-        when(() => mockSearchService.SearchProducts(any()))
+        when(() => mockSearchService.SearchProducts(any(), any()))
             .thenAnswer((_) async => dummyProductRes);
       },
       act: (bloc) => bloc.fetchFeaturedProducts('1'),
@@ -55,7 +63,7 @@ void main() {
       'on fetchFeaturedProducts error,',
       build: () => FeaturedProductsCubit(searchService: mockSearchService),
       setUp: () {
-        when(() => mockSearchService.SearchProducts(any()))
+        when(() => mockSearchService.SearchProducts(any(), any()))
             .thenThrow(Exception('dummy'));
       },
       act: (bloc) => bloc.fetchFeaturedProducts('1'),

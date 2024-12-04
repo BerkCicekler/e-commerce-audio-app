@@ -1,6 +1,7 @@
 import 'package:ecommerceaudio/product/constants/enums/filter_sort_by_enums.dart';
 import 'package:ecommerceaudio/product/models/product.dart';
 import 'package:ecommerceaudio/product/models/request_models/filter_request_model.dart';
+import 'package:ecommerceaudio/product/models/request_models/search_request_query_model.dart';
 import 'package:ecommerceaudio/product/services/search_service.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,14 +25,15 @@ final class FeaturedProductsCubit extends Cubit<FeaturedProductsCubitState> {
     try {
       final filter = FilterRequestModel(
         categoryId,
-        '',
-        0,
         FilterSortByEnums.popularity,
         0,
         0,
       );
 
-      final response = await searchService.SearchProducts(filter);
+      final response = await searchService.SearchProducts(
+        filter,
+        SearchRequestQueryModel('', 0),
+      );
       emit(
         FeaturedProductsCubitState(
           response.products,
