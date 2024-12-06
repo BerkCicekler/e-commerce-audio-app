@@ -19,9 +19,27 @@
     "featuredProducts": "Featured Products"
   },
 
+  "filterBottomSheet": {
+    "sortBy": "Sort By",
+    "applyFilter": "Apply Filter",
+    "priceRange": "Price Range",
+    "maxPrice": "Max Price",
+    "minPrice": "Min Price"
+  },
+
+  "filteredSearch":{
+    "searching": "Searching"
+  },
+
+  "search": {
+    "appBarTitle": "Search",
+    "latestSearch": "Latest Search"
+  },
+
   "global": {
     "password": "Password",
     "email": "Email",
-    "seeAll": "See All"
+    "seeAll": "See All",
+    "filter": "Filter"
   }
 }

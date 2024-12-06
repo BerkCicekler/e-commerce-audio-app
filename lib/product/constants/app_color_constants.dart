@@ -7,6 +7,7 @@ final class AppColorConstants {
   static const scaffoldBackground = Color(0XFFFFFFFF);
 
   static const greyLight = Color(0XFFF6F6F6);
+  static const greyLight2 = Color(0XFFF3F3F3);
 
   static const greyDark = Color(0XFF7F7F7F);
 }

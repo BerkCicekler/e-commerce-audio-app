@@ -14,6 +14,7 @@ class SearchService {
       EndPointEnums.shopFeatured,
       ApiRequestMethodsEnum.GET,
       filterRequestModel.toJson(),
+      queryData: query.toJson(),
     );
     return ProductResponseModel.fromJson(response.data);
   }

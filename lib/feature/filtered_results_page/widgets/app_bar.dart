@@ -1,4 +1,4 @@
-part of '../search_page.dart';
+part of '../filtered_results_page.dart';
 
 final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   const _AppBar();
@@ -6,14 +6,11 @@ final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: true,
-      title: Text(
-        _SearchPageLocalization.appBarTitle,
-        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-      ),
       actions: [
         const BasketIconButton(),
-        SizedBox(width: AppPaddingConstants.pageConst.right),
+        SizedBox(
+          width: AppPaddingConstants.pageConst.right,
+        ),
       ],
     );
   }

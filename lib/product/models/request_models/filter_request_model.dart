@@ -1,10 +1,11 @@
 import 'package:ecommerceaudio/product/constants/enums/filter_sort_by_enums.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'filter_request_model.g.dart';
 
 @JsonSerializable(createFactory: false)
-final class FilterRequestModel {
+final class FilterRequestModel extends Equatable {
   FilterRequestModel(this.category, this.sortBy, this.minPrice, this.maxPrice);
 
   final String category;
@@ -13,4 +14,13 @@ final class FilterRequestModel {
   final int maxPrice;
 
   Map<String, dynamic> toJson() => _$FilterRequestModelToJson(this);
+
+  factory FilterRequestModel.defaultFilter() =>
+      FilterRequestModel('', FilterSortByEnums.popularity, 0, 0);
+
+  bool get isOnlySortBySetted =>
+      category.isEmpty && minPrice == 0 && maxPrice == 0;
+
+  @override
+  List<Object?> get props => [category, sortBy, minPrice, maxPrice];
 }

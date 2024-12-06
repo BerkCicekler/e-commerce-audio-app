@@ -8,4 +8,6 @@ final class SearchRequestQueryModel {
 
   final String search;
   final int offset;
+
+  Map<String, dynamic> toJson() => _$SearchRequestQueryModelToJson(this);
 }
