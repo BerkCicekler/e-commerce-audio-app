@@ -9,13 +9,17 @@ final class _SearchViewModel extends ChangeNotifier {
     _searchController.dispose();
   }
 
-  void onSearchSubmit(String val) {
+  void onSearchSubmit(String val, BuildContext context) {
+    if (val.isEmpty) {
+      return;
+    }
+    context.router.push(FilteredSearchRoute(searchText: val));
     SearchHistoryCache.instance.addNewSearch(val);
   }
 
-  void onSearchHistoryTap(SearchHistory model) {
+  void onSearchHistoryTap(SearchHistory model, BuildContext context) {
     _searchController.text = model.searchText!;
-    onSearchSubmit(model.searchText!);
+    onSearchSubmit(model.searchText!, context);
   }
 
   void onSearchRemove(SearchHistory model) {

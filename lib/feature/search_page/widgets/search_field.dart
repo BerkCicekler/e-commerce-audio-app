@@ -10,7 +10,7 @@ final class _SearchField extends StatelessWidget {
       tag: 'searchTag',
       child: Material(
         child: AppTextField(
-          onSubmitted: searchVM.onSearchSubmit,
+          onSubmitted: (val) => searchVM.onSearchSubmit(val, context),
           autoFocus: true,
           controller: searchVM._searchController,
           hintText: 'Search headphone',

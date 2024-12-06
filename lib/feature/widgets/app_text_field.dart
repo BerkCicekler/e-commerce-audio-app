@@ -11,7 +11,7 @@ final class AppTextField extends StatelessWidget {
     this.onTap,
     this.readonly = false,
     this.keyboardType = TextInputType.text,
-    this.textInputAction = TextInputAction.none,
+    this.textInputAction = TextInputAction.done,
     this.autoFocus = false,
     this.onSubmitted,
     super.key,

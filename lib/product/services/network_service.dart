@@ -23,15 +23,16 @@ final class NetworkService {
     EndPointEnums endPoint,
     ApiRequestMethodsEnum method,
     Map<String, dynamic>? data, {
-    Map<String, dynamic>? query,
+    Map<String, dynamic>? queryData,
   }) async {
     final response = await _dio.request<Map<String, dynamic>>(
-        ApiConstants.url + endPoint.value,
-        data: data,
-        options: Options(
-          method: method.value,
-        ),
-        queryParameters: query);
+      ApiConstants.url + endPoint.value,
+      data: data,
+      queryParameters: queryData,
+      options: Options(
+        method: method.value,
+      ),
+    );
     return BaseResponse.fromResponse(response);
   }
 

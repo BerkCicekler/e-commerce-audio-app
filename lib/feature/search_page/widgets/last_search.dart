@@ -5,18 +5,18 @@ final class _HistoryHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Latest search',
-            style: TextStyle(
+            _SearchPageLocalization.latestSearch,
+            style: const TextStyle(
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 15),
-          _HistoriesStream(),
+          const SizedBox(height: 15),
+          const _HistoriesStream(),
         ],
       ),
     );
@@ -56,7 +56,7 @@ final class _History extends StatelessWidget {
   Widget build(BuildContext context) {
     final vm = Provider.of<_SearchViewModel>(context);
     return InkWell(
-      onTap: () => vm.onSearchHistoryTap(model),
+      onTap: () => vm.onSearchHistoryTap(model, context),
       child: Container(
         margin: const EdgeInsets.only(bottom: 10),
         child: Row(
