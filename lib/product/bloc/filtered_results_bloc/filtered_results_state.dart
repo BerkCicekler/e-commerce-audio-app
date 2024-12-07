@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'filtered_results_state.freezed.dart';
 
 @freezed
-class FilteredResultsState with _$FilteredSearchState {
+class FilteredResultsState with _$FilteredResultsState {
   const factory FilteredResultsState({
     required List<Product> products,
     required FilteredResultsStatus status,

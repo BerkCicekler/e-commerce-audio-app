@@ -20,7 +20,7 @@ final class AppRouter extends RootStackRouter {
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: ProductRoute.page),
         AutoRoute(page: SearchRoute.page),
-        AutoRoute(page: FilteredSearchRoute.page),
+        AutoRoute(page: FilteredResultsRoute.page),
       ];
 
   //@override
