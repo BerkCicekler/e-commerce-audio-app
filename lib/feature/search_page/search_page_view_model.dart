@@ -13,7 +13,7 @@ final class _SearchViewModel extends ChangeNotifier {
     if (val.isEmpty) {
       return;
     }
-    context.router.push(FilteredSearchRoute(searchText: val));
+    context.router.push(FilteredResultsRoute(searchText: val));
     SearchHistoryCache.instance.addNewSearch(val);
   }
 
