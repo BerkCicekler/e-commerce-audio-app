@@ -6,7 +6,7 @@ part 'category.g.dart';
 final class Category {
   Category({required this.id, required this.name});
 
-  @JsonKey(name: '_id')
+  @JsonKey(name: 'id')
   final String id;
   @JsonKey(name: 'value')
   final String name;
