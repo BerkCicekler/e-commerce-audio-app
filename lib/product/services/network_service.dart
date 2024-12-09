@@ -3,6 +3,7 @@ import 'package:ecommerceaudio/product/constants/api_constants.dart';
 import 'package:ecommerceaudio/product/constants/enums/api_request_methods_enum.dart';
 import 'package:ecommerceaudio/product/constants/enums/end_point_enums.dart';
 import 'package:ecommerceaudio/product/models/base_response_model.dart';
+import 'package:ecommerceaudio/product/services/interceptors/snack_bar_interceptor.dart';
 
 final class NetworkService {
   NetworkService._() {
@@ -13,6 +14,7 @@ final class NetworkService {
         receiveTimeout: ApiConstants.receiveTimeout,
       ),
     );
+    _dio.interceptors.add(ErrorSnackBarInterceptor());
   }
 
   static late final Dio _dio;

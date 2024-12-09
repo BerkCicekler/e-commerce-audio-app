@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:ecommerceaudio/feature/widgets/app_snack_bar_util.dart';
 import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
 import 'package:ecommerceaudio/product/init/product_blocs.dart';
 import 'package:ecommerceaudio/product/init/product_initialization.dart';
@@ -27,6 +28,7 @@ final class _MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      scaffoldMessengerKey: AppSnackBarUtil.messengerKey,
       routerConfig: _appRouter.config(
         reevaluateListenable: ReevaluateListenable.stream(
           context.read<AuthManagerBloc>().stream,

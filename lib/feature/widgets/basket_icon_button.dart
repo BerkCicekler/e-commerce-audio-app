@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommerceaudio/product/constants/svg_constants.dart';
+import 'package:ecommerceaudio/product/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -11,7 +13,9 @@ final class BasketIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.router.push(const BasketRoute());
+      },
       child: SvgPicture.asset(
         SvgConstants.shoppingCart,
       ),

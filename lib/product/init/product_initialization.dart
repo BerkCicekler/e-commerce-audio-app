@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
+import 'package:ecommerceaudio/product/bloc/basket_bloc/basket_bloc.dart';
 import 'package:ecommerceaudio/product/bloc/categories_cubit/categories_cubit.dart';
 import 'package:ecommerceaudio/product/cache/search_history_cache.dart';
 import 'package:ecommerceaudio/product/models/cache_models/search_history.dart';
 import 'package:ecommerceaudio/product/services/auth_service.dart';
+import 'package:ecommerceaudio/product/services/basket_service.dart';
 import 'package:ecommerceaudio/product/services/categories_service.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
@@ -36,5 +38,6 @@ final class ProductInitialization {
         categoriesService: CategoriesService(),
       ),
     );
+    GetIt.I.registerSingleton(BasketBloc(basketService: BasketService()));
   }
 }

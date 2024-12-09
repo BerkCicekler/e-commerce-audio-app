@@ -31,7 +31,7 @@ final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ],
         ),
-        actions: const [
+        actions: [
           CircleAvatar(
             radius: 17,
             backgroundImage: AssetImage(AppImageConstants.profilePic),

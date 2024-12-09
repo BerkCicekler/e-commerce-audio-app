@@ -65,7 +65,7 @@ final class _ProductHolder extends StatelessWidget {
           children: [
             Center(
               child: SizedBox(
-                width: 150,
+                width: 140,
                 child: AppImageWidget.network(
                   imageName: product.pictureName,
                 ),
@@ -79,7 +79,7 @@ final class _ProductHolder extends StatelessWidget {
               'USD ${product.price}',
               style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
             ),
-            const SizedBox(height: 10),
+            const Spacer(),
             const Row(
               children: [
                 Icon(
@@ -98,7 +98,7 @@ final class _ProductHolder extends StatelessWidget {
                   style: TextStyle(fontSize: 13),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

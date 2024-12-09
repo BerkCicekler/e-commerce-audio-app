@@ -1,11 +1,13 @@
 import 'package:auto_route/annotations.dart';
 import 'package:ecommerceaudio/feature/widgets/basket_icon_button.dart';
+import 'package:ecommerceaudio/product/bloc/basket_bloc/basket_bloc.dart';
 import 'package:ecommerceaudio/product/constants/app_color_constants.dart';
 import 'package:ecommerceaudio/product/constants/app_image_constants.dart';
 import 'package:ecommerceaudio/product/constants/app_padding_constants.dart';
 import 'package:ecommerceaudio/product/constants/radius_constants.dart';
 import 'package:ecommerceaudio/product/models/product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 part 'widgets/app_bar.dart';
@@ -39,7 +41,7 @@ final class ProductPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const _AddToCartButton(),
+            _AddToCartButton(product),
             const SizedBox(height: 20),
           ],
         ),

@@ -16,6 +16,8 @@ final class SvgConstants {
   static const clock = "${_basePath}clock.svg";
   static const xIcon = "${_basePath}x.svg";
   static const filter = "${_basePath}filter.svg";
+  static const trash = "${_basePath}trash.svg";
+  static const right = "${_basePath}right.svg";
 
   static const oauth_google = "${_basePath}oauth/google.svg";
   static const oauth_facebook = "${_basePath}oauth/facebook.svg";
