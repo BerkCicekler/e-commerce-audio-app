@@ -18,9 +18,11 @@ final class FilterRequestModel extends Equatable {
   factory FilterRequestModel.defaultFilter() =>
       FilterRequestModel('', FilterSortByEnums.popularity, 0, 0);
 
+  @JsonKey(includeToJson: false)
   bool get isOnlySortBySetted =>
       category.isEmpty && minPrice == 0 && maxPrice == 0;
 
+  @JsonKey(includeToJson: false)
   @override
   List<Object?> get props => [category, sortBy, minPrice, maxPrice];
 }

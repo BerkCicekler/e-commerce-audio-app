@@ -20,5 +20,7 @@ mixin _HomePageMixin on State<HomePage> {
     await context.read<CategoriesCubit>().fetchCategories();
     _featuredProductsCubit
         .fetchFeaturedProducts(context.read<CategoriesCubit>().state[0].id);
+
+    context.read<BasketBloc>().add(BasketFetchEvent());
   }
 }

@@ -36,6 +36,12 @@
     "latestSearch": "Latest Search"
   },
 
+  "basket": {
+    "appBarTitle": "Shopping Cart",
+    "totalItems": "Total {} Items",
+    "checkoutText": "Proceed to Checkout"
+  },
+
   "global": {
     "password": "Password",
     "email": "Email",

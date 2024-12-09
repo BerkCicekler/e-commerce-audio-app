@@ -6,7 +6,6 @@ part 'product.g.dart';
 final class Product {
   Product(this.id, this.pictureName, this.name, this.price);
 
-  @JsonKey(name: "id")
   final String id;
   final String pictureName;
   final String name;

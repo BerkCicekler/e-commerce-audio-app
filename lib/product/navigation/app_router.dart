@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ecommerceaudio/feature/auth_page/auth_page.dart';
+import 'package:ecommerceaudio/feature/basket_page/basket_page.dart';
 import 'package:ecommerceaudio/feature/filtered_results_page/filtered_results_page.dart';
 import 'package:ecommerceaudio/feature/home_page/home_page.dart';
 import 'package:ecommerceaudio/feature/product_page/product_page.dart';
@@ -21,6 +22,7 @@ final class AppRouter extends RootStackRouter {
         AutoRoute(page: ProductRoute.page),
         AutoRoute(page: SearchRoute.page),
         AutoRoute(page: FilteredResultsRoute.page),
+        AutoRoute(page: BasketRoute.page),
       ];
 
   //@override

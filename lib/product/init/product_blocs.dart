@@ -1,4 +1,5 @@
 import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
+import 'package:ecommerceaudio/product/bloc/basket_bloc/basket_bloc.dart';
 import 'package:ecommerceaudio/product/bloc/categories_cubit/categories_cubit.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +13,7 @@ final class ProductBlocsInitialization extends MultiBlocProvider {
           providers: [
             BlocProvider(create: (_) => GetIt.I<AuthManagerBloc>()),
             BlocProvider(create: (_) => GetIt.I<CategoriesCubit>()),
+            BlocProvider(create: (_) => GetIt.I<BasketBloc>()),
           ],
           child: child,
         );
