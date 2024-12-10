@@ -12,6 +12,9 @@ final class AuthManagerErrorState extends AuthManagerState {
 }
 
 final class AuthManagerSuccessState extends AuthManagerState {
-  AuthManagerSuccessState(this.user);
+  AuthManagerSuccessState(this.user, this.token, this.refreshToken);
   final User user;
+
+  final String token;
+  final String refreshToken;
 }
