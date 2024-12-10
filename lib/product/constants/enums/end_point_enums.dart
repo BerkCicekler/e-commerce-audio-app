@@ -4,6 +4,7 @@ enum EndPointEnums {
   authLogin('user/login'),
   authRegister('user/register'),
   authOauth('user/oauth'),
+  refreshToken('user/refreshToken'),
 
   basketFetch('basket/'),
   basketAddCountToItem('basket/update'),

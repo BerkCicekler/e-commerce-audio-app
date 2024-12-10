@@ -22,4 +22,10 @@ final class AuthPageOnOAuthSignInEvent extends AuthPageEvent {
   final IOAuthSignInService oAuthService;
 }
 
+final class AuthRefreshTokenSignInEvent extends AuthPageEvent {
+  AuthRefreshTokenSignInEvent(this.refreshToken);
+
+  final String refreshToken;
+}
+
 final class AuthSignOutEvent extends AuthPageEvent {}

@@ -60,6 +60,11 @@ mixin _AuthPageMixin on State<AuthPage> {
       case AuthManagerSuccessState:
         // the authPage is defined keepHistory=false
         // in AppRouter so we are just pushing out home page
+        final successState = state as AuthManagerSuccessState;
+
+        NetworkService.instance.setAccessToken(successState.token);
+        RefreshTokenCache.instance.updateRefreshToken(state.refreshToken);
+
         context.router.push(const HomeRoute());
 
       default:

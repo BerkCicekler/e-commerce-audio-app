@@ -4,9 +4,10 @@ part 'sign_in_response_model.g.dart';
 
 @JsonSerializable(createToJson: false)
 final class SignInResponseModel {
-  SignInResponseModel(this.token, this.email, this.userName);
+  SignInResponseModel(this.token, this.refreshToken, this.email, this.userName);
 
   final String token;
+  final String refreshToken;
   final String email;
   final String userName;
 
