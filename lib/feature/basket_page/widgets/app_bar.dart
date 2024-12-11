@@ -14,7 +14,17 @@ final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         InkWell(
-          onTap: () {
+          onTap: () async {
+            final action = await AppActionDialog.show(
+              context: context,
+              title: _BasketPageLocalization.dialogTitle,
+              contextText: _BasketPageLocalization.dialogContext,
+              okText: _BasketPageLocalization.ok,
+              cancelText: _BasketPageLocalization.cancel,
+            );
+            if (!action) {
+              return;
+            }
             bloc.add(BasketClearAllEvent());
           },
           child: SvgPicture.asset(

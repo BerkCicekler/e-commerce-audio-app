@@ -39,7 +39,8 @@
   "basket": {
     "appBarTitle": "Shopping Cart",
     "totalItems": "Total {} Items",
-    "checkoutText": "Proceed to Checkout"
+    "checkoutText": "Proceed to Checkout",
+    "clearBasketDialog": "This action will remove all items from your basket"
   },
 
   "profile": {
@@ -55,11 +56,14 @@
   },
 
   "global": {
+    "ok": "Ok",
+    "cancel": "Cancel",
     "password": "Password",
     "email": "Email",
     "seeAll": "See All",
     "filter": "Filter",
     "general": "General",
-    "logout": "Logout"
+    "logout": "Logout",
+    "areYouSure": "Are you sure?"
   }
 }
