@@ -15,6 +15,12 @@ final class RefreshTokenCache {
     _refreshTokenCollection = isar.refreshTokenCacheModels;
   }
 
+  Future<void> removeRefreshToken() async {
+    await _isar.writeTxn(() async {
+      await _refreshTokenCollection.delete(1);
+    });
+  }
+
   Future<void> updateRefreshToken(String val) async {
     await _isar.writeTxn(() async {
       await _refreshTokenCollection.delete(1);

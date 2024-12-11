@@ -10,4 +10,6 @@ final class AppColorConstants {
   static const greyLight2 = Color(0XFFF3F3F3);
 
   static const greyDark = Color(0XFF7F7F7F);
+
+  static const dividerColor = Color.fromARGB(57, 0, 0, 0);
 }
