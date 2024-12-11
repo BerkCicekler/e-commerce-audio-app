@@ -4,7 +4,7 @@ such as auth system searching products, filtering search, basket menagement and 
 I learned much better ways to utilize Flutter's capabilities and also improved my knowledge of Dart, of course. I hope my opens-ource project will also be educational for you. 
 The app uses an API that i developed [link](https://github.com/BerkCicekler/e-commerce-audio-api).
 
-## Thought about UI
+## Thoughts about UI
 Generally i followed this [UIKit](https://www.figma.com/community/file/900960330469075490/e-commerce-ui-kit-v1-1) and sending my thanks to <b>Harum Shidiqi</b> for creating such a high-quality UIKit. However, due to the kit's limited theme data (e.g., radiuses, font styles, etc.), I had to write a lot of boilerplate code for styling texts and other widgets.  
 This project's UI code could definitely have been written more efficiently if there had been proper documentation for all the font and styling variables. And yes, this is my excuse 🫣.
 
