@@ -34,5 +34,8 @@ final class LightTheme {
     actionIconTheme: ActionIconThemeData(
       backButtonIconBuilder: (context) => SvgPicture.asset(SvgConstants.left),
     ),
+    dividerTheme: const DividerThemeData(
+      color: AppColorConstants.dividerColor,
+    ),
   );
 }

@@ -32,10 +32,11 @@ final class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
         actions: [
-          CircleAvatar(
-            radius: 17,
-            backgroundImage: AssetImage(AppImageConstants.profilePic),
-            backgroundColor: Colors.transparent,
+          InkWell(
+            onTap: () {
+              context.router.push(const ProfileRoute());
+            },
+            child: const CircleProfilePicture(17),
           ),
         ],
       ),

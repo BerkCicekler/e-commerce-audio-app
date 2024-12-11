@@ -4,6 +4,7 @@ import 'package:ecommerceaudio/feature/basket_page/basket_page.dart';
 import 'package:ecommerceaudio/feature/filtered_results_page/filtered_results_page.dart';
 import 'package:ecommerceaudio/feature/home_page/home_page.dart';
 import 'package:ecommerceaudio/feature/product_page/product_page.dart';
+import 'package:ecommerceaudio/feature/profile_page/profile_page.dart';
 import 'package:ecommerceaudio/feature/search_page/search_page.dart';
 import 'package:ecommerceaudio/product/bloc/auth_manager_bloc/auth_manager_bloc.dart';
 import 'package:ecommerceaudio/product/models/product.dart';
@@ -23,8 +24,9 @@ final class AppRouter extends RootStackRouter {
         AutoRoute(page: SearchRoute.page),
         AutoRoute(page: FilteredResultsRoute.page),
         AutoRoute(page: BasketRoute.page),
+        AutoRoute(page: ProfileRoute.page),
       ];
 
-  //@override
-  //List<AutoRouteGuard> get guards => [_AuthGuard()];
+  @override
+  List<AutoRouteGuard> get guards => [_AuthGuard()];
 }

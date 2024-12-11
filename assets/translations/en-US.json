@@ -42,10 +42,24 @@
     "checkoutText": "Proceed to Checkout"
   },
 
+  "profile": {
+    "appBarTitle": "Profile",
+    "editProfile": "Edit Profile",
+    "notifications": "Notifications",
+    "wishlist": "Wishlist",
+    "legal": "Legal",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "personal": "Personal",
+    "reportABug": "Report a Bug"
+  },
+
   "global": {
     "password": "Password",
     "email": "Email",
     "seeAll": "See All",
-    "filter": "Filter"
+    "filter": "Filter",
+    "general": "General",
+    "logout": "Logout"
   }
 }
