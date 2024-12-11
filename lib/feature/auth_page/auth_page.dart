@@ -41,6 +41,7 @@ final class AuthPage extends StatefulWidget {
 class _AuthPageState extends State<AuthPage> with _AuthPageMixin {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return BlocListener<AuthManagerBloc, AuthManagerState>(
       listener: (_, s) => _onAuthManagerBlocChange(s),
       child: Scaffold(
@@ -51,9 +52,9 @@ class _AuthPageState extends State<AuthPage> with _AuthPageMixin {
             child: Center(
               child: Column(
                 children: [
-                  const SizedBox(height: 60),
+                  SizedBox(height: height * .1),
                   const _TopTexts(),
-                  const SizedBox(height: 60),
+                  SizedBox(height: height * .18),
                   _FormField(
                     authPageVariables: _authPageVariables,
                   ),

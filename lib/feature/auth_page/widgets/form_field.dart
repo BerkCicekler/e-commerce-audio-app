@@ -26,7 +26,7 @@ final class _FormField extends StatelessWidget {
           ),
           _PasswordTextField(authPageVariables: authPageVariables),
           const SizedBox(height: 20),
-          const _ForgotPassword(),
+          if (authPageVariables.isSignInPage) const _ForgotPassword(),
           const SizedBox(height: 30),
           _SignInAndSignUpElevatedButton(
             authPageVariables: authPageVariables,

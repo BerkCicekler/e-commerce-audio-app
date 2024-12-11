@@ -75,11 +75,14 @@ final class _ProductHolder extends StatelessWidget {
               product.name,
               style: const TextStyle(fontSize: 15.6),
             ),
+            const Spacer(),
             Text(
               'USD ${product.price}',
               style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
             ),
-            const Spacer(),
+            const Spacer(
+              flex: 3,
+            ),
             const Row(
               children: [
                 Icon(
