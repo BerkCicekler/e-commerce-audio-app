@@ -8,12 +8,19 @@ The app uses an API that i developed [link](https://github.com/BerkCicekler/e-co
 Generally i followed this [UIKit](https://www.figma.com/community/file/900960330469075490/e-commerce-ui-kit-v1-1) and sending my thanks to <b>Harum Shidiqi</b> for creating such a high-quality UIKit. However, due to the kit's limited theme data (e.g., radiuses, font styles, etc.), I had to write a lot of boilerplate code for styling texts and other widgets.  
 This project's UI code could definitely have been written more efficiently if there had been proper documentation for all the font and styling variables. And yes, this is my excuse 🫣.
 
-## Features
-Authentication System<br>
-Google(OAuth) SignIn<br>
-Remember Me<br>
-Product searching and filtering<br>
-Basket management
+## Features  
+- **Authentication System:**  
+   - Google OAuth Sign-In  
+   - "Remember Me" functionality  
+- **Product Management:**  
+   - Product search and filtering
+   - Basket (cart) management
+- **Cache**
+   - Efficient caching with `isar`
+   - Search History Caching
+- **Localization:**  
+   - Multilingual support with `easy_localization`
+
 
 ## Dependencies
 - State Management
@@ -49,24 +56,37 @@ Basket management
   * [very_good_analysis](https://pub.dev/packages/very_good_analysis)
 
 # Images
-<img src="https://github.com/user-attachments/assets/50224053-d331-4254-ae56-256600f22a5e" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/efb675cc-d0e0-4746-91d2-66ab9fa88af1" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/a95b5675-3911-41c0-a64f-3c8baffef334" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/6be08e3b-9fe8-4f56-8aed-b3df37d17512" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/55774648-03e7-4318-a11e-d42d93e8f7a3" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/e8a83ccd-38e1-4e23-9bfc-90a2fa36de83" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/57901020-7a0d-4aeb-a262-532361f12e53" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/47a89357-d713-4c62-b512-16c3c02c7245" width="250px" alt="">
-<img src="https://github.com/user-attachments/assets/194f9ce3-9996-49a9-895e-10d53a95e9a7" width="250px" alt="">
+<img src="https://github.com/user-attachments/assets/50224053-d331-4254-ae56-256600f22a5e" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/efb675cc-d0e0-4746-91d2-66ab9fa88af1" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/a95b5675-3911-41c0-a64f-3c8baffef334" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/6be08e3b-9fe8-4f56-8aed-b3df37d17512" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/55774648-03e7-4318-a11e-d42d93e8f7a3" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/e8a83ccd-38e1-4e23-9bfc-90a2fa36de83" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/57901020-7a0d-4aeb-a262-532361f12e53" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/47a89357-d713-4c62-b512-16c3c02c7245" width="270px" alt="">
+<img src="https://github.com/user-attachments/assets/194f9ce3-9996-49a9-895e-10d53a95e9a7" width="270px" alt="">
 
-## How Do I Use
-Firstly as the api is localhosted you have to restapi running on your local device<br>
-The setup tutorial can be found in the bottom [E-Commerce-API](https://github.com/BerkCicekler/e-commerce-audio-api)<br>
-after setting up the api just clone the project to your device and use these commands
-```
-flutter pub get
-dart run build_runner build
-sh scripts/language.sh
-```
-Voilà! You are ready to go
+## Getting Started
+To run this project locally, follow these steps:  
+### Prerequisites  
+- Flutter SDK installed  
+- API set up and running locally ([API Repository](https://github.com/BerkCicekler/e-commerce-audio-api))  
 
+### Installation  
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/BerkCicekler/e-commerce-audio-app
+2. Navigate to the project directory:
+   ```bash
+   cd e-commerce-audio-app
+3. Install dependencies:
+   ```bash
+   flutter pub get
+3. Generate necessary files:
+   ```bash
+   dart run build_runner build  
+   sh scripts/language.sh  
+3. Run the application:
+   ```bash
+   flutter run
+and Voilà!
